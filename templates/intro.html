@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <h1>Pythonの世界へようこそ</h1>
+    <br>
+    <h5>最初に、このアプリで何をするのかを説明しておきます。</h5>
+    <p>このアプリではプログラミング言語の一つであるPythonについて学んでいきます。</p>
+    <br>
+    <p>このアプリ内で基礎的な内容を順番にこなしていき、<br>
+    Pythonとはどのようなものかを大まかにわかっている状態になれば幸いです。</p>
+    <br>
+    <p>これから１つ１つ順を追って学んでいきましょう。</p>
+
+
+    <br>
+    <p>準備ができたら question1 から始めましょう。</p>
+    <a href="{{ url_for('question1') }}"><button>question1へ</button></a><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2><font color="red">※試作段階です。全10問になっています。</font></h2>    
+
+
+
+</body>
+
+
+{% endblock %}
