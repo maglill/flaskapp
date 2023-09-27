@@ -1,12 +1,12 @@
 from flask import Flask, render_template, url_for, request
 from flask_wtf.csrf import CSRFProtect
 from flask_wtf.csrf import generate_csrf
-
+from .config import SECRET_KEY
 
 #Flaskのインスタンスを生成
 #flaskでアプリを作りますよってやつ。
+
 app = Flask(__name__, static_folder="./templates/imagebox")
-app.config['SECRET_KEY'] = 'hogepeke'  # 秘密鍵を指定
 
 csrf = CSRFProtect()
 
@@ -189,6 +189,6 @@ if __name__=="__main__":
     #CSRF保護を初期化。CSRF拡張機能を用いて、CSRF保護を追加する。
     csrf.init_app(app)
 
-    #デバッグモード有効化。
-    app.run(debug=True)
+    #デバッグモード有効化はTrue,無効化がFalse。
+    app.run(debug=False)
 
