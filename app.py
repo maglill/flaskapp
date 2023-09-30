@@ -18,6 +18,7 @@ session["result"] = var       #キーが存在する場合
 csrf = CSRFProtect()
 
 
+
 @app.route("/debug")
 def debug():
     return render_template("debug.html")
