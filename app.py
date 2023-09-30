@@ -1,12 +1,19 @@
-from flask import Flask, render_template, url_for, request
-from flask_wtf.csrf import CSRFProtect
-from flask_wtf.csrf import generate_csrf
+from flask import Flask, render_template, url_for, request ,session
+from flask_session import Session
+from flask_wtf.csrf import CSRFProtect ,generate_csrf
 from .config import SECRET_KEY
 
 #Flaskのインスタンスを生成
 #flaskでアプリを作りますよってやつ。
 
 app = Flask(__name__, static_folder="./templates/imagebox")
+app.config['SECRET_KEY'] = '306cf1aff2196801ea027556d43b6f618323d62238e1849ec9193a2157eb35c0'
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
+
+var = session.get('result')   #キーがない可能性がある場合
+session["result"] = var       #キーが存在する場合
+
 
 csrf = CSRFProtect()
 
