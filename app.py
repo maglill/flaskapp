@@ -134,7 +134,7 @@ def question5():
         # pythonっていう名前。question2.htmlから。
         cleaned_text = answer.replace('\n', ' ').replace('\r', ' ')
         clean = cleaned_text.replace(' ', '').replace(' ', '')
-        if "=5" in clean and "=3" in clean and "print" in clean and "python" in clean and "楽しい" in clean and "+" in clean:
+        if "=5" in clean and "=3" in clean and "print" in clean and "python" in clean and "楽しい" in clean and "*" in clean:
             return render_template('correct5.html', csrf_token=csrf_token)
         else:
             return render_template('error.html', csrf_token=csrf_token)
