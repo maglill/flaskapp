@@ -110,7 +110,8 @@ def question4():
         answer=request.form.get("python")
         # pythonっていう名前。question2.htmlから。
         cleaned_text = answer.replace('\n', '').replace('\r', '')
-        if cleaned_text == 'mojiretu = "あいうえお"suuti = 8print(mojiretu)print(suuti)':
+        clean = cleaned_text.replace(' ', '').replace(' ', '')
+        if clean == 'mojiretu="あいうえお"suuti=8print(mojiretu)print(suuti)':
             return render_template('correct4.html', csrf_token=csrf_token)
         else:
             return render_template('error.html', csrf_token=csrf_token)
